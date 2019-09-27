@@ -38,6 +38,7 @@ VistaUsuario.prototype = {
     
     elementos.botonAgregar.click(function() {
       contexto.agregarVotos(); 
+      contexto.reconstruirGrafico();
     });
       
     this.reconstruirGrafico();

@@ -64,8 +64,6 @@ Modelo.prototype = {
   agregarVoto: function (nombrePregunta,respuestaSeleccionada) { 
     let respuestas = this.preguntas.find(pregunta => pregunta.textoPregunta === nombrePregunta).cantidadPorRespuesta;
     let respuesta = respuestas.find(respuesta => respuesta.textoRespuesta == respuestaSeleccionada);
-    console.log('respuestas', respuestas)
-    console.log('respuesta', respuesta);
     respuesta.cantidad++;
     this.guardar();
   },
