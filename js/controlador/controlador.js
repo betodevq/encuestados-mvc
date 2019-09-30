@@ -25,6 +25,7 @@ Controlador.prototype = {
   inicializarPreguntas: function(){
     this.modelo.inicializarPreguntas();
   },
+  
   agregarVoto: function(nombrePregunta,respuestaSeleccionada){
     this.modelo.agregarVoto(nombrePregunta,respuestaSeleccionada);
   }

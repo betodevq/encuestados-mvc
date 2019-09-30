@@ -11,6 +11,7 @@ var Modelo = function () {
   this.todasPreguntasBorradas = new Evento(this);
   this.preguntaEditada = new Evento(this);
   this.preguntasInicializadas = new Evento(this);
+  this.votoAgregado = new Evento(this);
 };
 
 Modelo.prototype = {
@@ -46,8 +47,7 @@ Modelo.prototype = {
   },
 
   borrarTodo: function () {
-    this.preguntas.splice(0, this.preguntas.length);
-    localStorage.clear();
+    this.preguntas = [];
     this.ultimoId = 0;
     this.guardar();
     this.todasPreguntasBorradas.notificar();
@@ -66,6 +66,7 @@ Modelo.prototype = {
     let respuesta = respuestas.find(respuesta => respuesta.textoRespuesta == respuestaSeleccionada);
     respuesta.cantidad++;
     this.guardar();
+    this.votoAgregado.notificar();
   },
   //se guardan las preguntas
   guardar: function () {

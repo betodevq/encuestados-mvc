@@ -27,6 +27,10 @@ var VistaUsuario = function(modelo, controlador, elementos) {
   this.modelo.preguntasInicializadas.suscribir(function(){
     contexto.reconstruirLista();
   });
+
+  this.modelo.votoAgregado.suscribir(function(){
+    contexto.reconstruirGrafico();
+  })
 };
 
 VistaUsuario.prototype = {
@@ -38,7 +42,6 @@ VistaUsuario.prototype = {
     
     elementos.botonAgregar.click(function() {
       contexto.agregarVotos(); 
-      contexto.reconstruirGrafico();
     });
       
     this.reconstruirGrafico();
