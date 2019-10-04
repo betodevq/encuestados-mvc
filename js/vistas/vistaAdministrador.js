@@ -102,7 +102,10 @@ VistaAdministrador.prototype = {
 
     e.botonEditarPregunta.click(function(){
       var id = parseInt($('.list-group-item.active').attr('id'));
-      if (id){contexto.controlador.editarPregunta(id);}
+      if (id){
+        var nuevaPregunta = prompt('Ingrese la nueva pregunta:')
+        contexto.controlador.editarPregunta(id, nuevaPregunta);
+      }
       
     });
   },

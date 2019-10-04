@@ -53,9 +53,8 @@ Modelo.prototype = {
     this.todasPreguntasBorradas.notificar();
   },
 
-  editarPregunta: function (id) {
+  editarPregunta: function (id, nuevaPregunta) {
     let pregunta = this.obtenerPregunta(id);
-    let nuevaPregunta = prompt('Ingrese la nueva pregunta: ');
     this.preguntas[pregunta].textoPregunta = nuevaPregunta;
     this.guardar();
     this.preguntaEditada.notificar();
